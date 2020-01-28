@@ -22,7 +22,7 @@ public class VolatileReOrderSample {
                     a = 1; //是读还是写？store，volatile写
                     //storeload ,读写屏障，不允许volatile写与第二部volatile读发生重排
                     //手动加内存屏障
-                    UnsafeInstance.reflectGetUnsafe().storeFence();
+//                    UnsafeInstance.reflectGetUnsafe().storeFence();
                     x = b; // 读还是写？读写都有，先读volatile，写普通变量
                     //分两步进行，第一步先volatile读，第二步再普通写
                 }
@@ -30,7 +30,7 @@ public class VolatileReOrderSample {
             Thread t2 = new Thread(new Runnable() {
                 public void run() {
                     b = 1;
-                    UnsafeInstance.reflectGetUnsafe().storeFence();
+//                    UnsafeInstance.reflectGetUnsafe().storeFence();
                     y = a;
                 }
             });

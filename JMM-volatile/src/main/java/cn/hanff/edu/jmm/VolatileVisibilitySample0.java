@@ -11,21 +11,23 @@ public class VolatileVisibilitySample0 {
 
     public void load(){
         String threadname = Thread.currentThread().getName();
-        int i = 0;
         while (!initFlag){
         }
         System.out.println("线程："+threadname+"当前线程嗅探到initFlag的状态的改变");
     }
 
     public static void main(String[] args){
+
+
         VolatileVisibilitySample sample = new VolatileVisibilitySample();
-        Thread threadA = new Thread(()->{
-            sample.refresh();
-        },"threadA");
 
         Thread threadB = new Thread(()->{
             sample.load();
         },"threadB");
+
+        Thread threadA = new Thread(()->{
+            sample.refresh();
+        },"threadA");
 
         threadB.start();
         try {
