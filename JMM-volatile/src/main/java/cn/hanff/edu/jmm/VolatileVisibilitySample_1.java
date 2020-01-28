@@ -1,6 +1,6 @@
 package cn.hanff.edu.jmm;
 
-public class VolatileVisibilitySample {
+public class VolatileVisibilitySample_1 {
     private boolean initFlag = false;
     static Object object = new Object();
 
@@ -23,7 +23,7 @@ public class VolatileVisibilitySample {
     }
 
     public static void main(String[] args){
-        VolatileVisibilitySample sample = new VolatileVisibilitySample();
+        VolatileVisibilitySample_1 sample = new VolatileVisibilitySample_1();
         Thread threadA = new Thread(()->{
             sample.refresh();
         },"threadA");
