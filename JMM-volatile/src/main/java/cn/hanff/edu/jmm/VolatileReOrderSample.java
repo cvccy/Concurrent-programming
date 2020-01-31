@@ -5,7 +5,7 @@ package cn.hanff.edu.jmm;
  */
 public class VolatileReOrderSample {
     private static int x = 0, y = 0;
-    private static int a = 0, b =0;
+    private volatile static int a = 0, b =0;
     static Object object = new Object();
 
     public static void main(String[] args) throws InterruptedException {
