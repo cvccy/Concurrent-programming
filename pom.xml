@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>JMM-volatile</module>
+        <module>synchronized-Lock-AQS</module>
     </modules>
 
     <build>
