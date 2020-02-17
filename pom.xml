@@ -11,6 +11,7 @@
     <modules>
         <module>JMM-volatile</module>
         <module>synchronized-Lock-AQS</module>
+        <module>Tools-CountDownLatch-Senaphore</module>
     </modules>
 
     <build>
