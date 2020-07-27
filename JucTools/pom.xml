@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>Tools-CountDownLatch-Senaphore</artifactId>
+    <artifactId>JucTools</artifactId>
 
 
 </project>
