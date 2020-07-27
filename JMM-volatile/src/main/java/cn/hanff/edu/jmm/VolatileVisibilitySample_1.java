@@ -1,5 +1,10 @@
 package cn.hanff.edu.jmm;
 
+/**
+ * 此时的initflag依旧不可见，但是load()中的同步块可能会导致线程的上下文切换，进而使得线程被再次唤醒时，initFlag再次从主存获取数据；
+ * @author xhf
+ * @time 2020/07/27
+ */
 public class VolatileVisibilitySample_1 {
     private boolean initFlag = false;
     static Object object = new Object();

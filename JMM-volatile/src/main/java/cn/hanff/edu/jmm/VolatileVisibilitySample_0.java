@@ -14,7 +14,7 @@ public class VolatileVisibilitySample_0 {
 
     public void load(){
         String threadname = Thread.currentThread().getName();
-        while (!initFlag){                                    //不停的读取initFlag模拟是否能够嗅探到initFlag的改变，如果能够感知到则跳出循环，打印信息
+        while (!initFlag){ //不停的读取initFlag模拟是否能够嗅探到initFlag的改变，如果能够感知到则跳出循环，打印信息
             //线程在此处空跑，等待initFlag状态改变
         }
         System.out.println("线程："+threadname+"当前线程嗅探到initFlag的状态的改变");

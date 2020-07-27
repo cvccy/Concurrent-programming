@@ -1,7 +1,13 @@
 package cn.hanff.edu.jmm;
 
+/**
+ * @author xhf
+ * @time 2020/07/27
+ * @description initFlag添加volatile属性，在字段前添加#Lock锁，遵循缓存一致性协议。
+ *              volatile可见性
+ */
 public class VolatileVisibilitySample_2 {
-    private volatile boolean initFlag = false;  //添加volatile属性，在字段前添加#Lock锁，遵循缓存一致性协议。
+    private volatile boolean initFlag = false;  //
 //    static Object object = new Object();
 
     public void refresh(){
@@ -11,12 +17,10 @@ public class VolatileVisibilitySample_2 {
     }
 
     public void load(){
+
         String threadname = Thread.currentThread().getName();
         int i = 0;
         while (!initFlag){
-//            synchronized (object){
-//                i++;
-//            }
             i++;
         }
         System.out.println("线程："+threadname+"当前线程嗅探到initFlag的状态的改变"+i);
