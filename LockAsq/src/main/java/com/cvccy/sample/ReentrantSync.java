@@ -1,4 +1,4 @@
-package cn.hanff.edu.sample;
+package com.cvccy.sample;
 
 public class ReentrantSync {
 

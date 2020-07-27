@@ -1,16 +1,23 @@
-package cn.hanff.edu.aqs;
-
+package com.cvccy.asq;
 import sun.misc.Unsafe;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
 
-public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchronizer implements java.io.Serializable {
+/**
+ * @author ：xhf
+ * @date：2020/7/27
+ * @version: V1.0
+ */
+public abstract class AbstractQueuedSynchronizer
+        extends AbstractOwnableSynchronizer
+        implements java.io.Serializable {
     private static final long serialVersionUID = 7373984972572414691L;
 
     /**
@@ -98,6 +105,8 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
      * expert group, for helpful ideas, discussions, and critiques
      * on the design of this class.
      */
+
+
     static final class Node {
         /**
          * 标记节点未共享模式
@@ -176,7 +185,7 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
         Node() {    // Used to establish initial head or SHARED marker
         }
 
-        Node(Thread thread, Node mode) {     // Used by addWaiter
+        Node(Thread thread, Node mode) {  // Used by addWaiter
             this.nextWaiter = mode;
             this.thread = thread;
         }
@@ -497,7 +506,9 @@ public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchron
      */
 
     /**
-     * 已经在队列当中的Thread节点，准备阻塞等待获取锁
+     * 已经在队列当中的Thread节点，准备阻塞等待
+
+
      */
     final boolean acquireQueued(final Node node, int arg) {
         boolean failed = true;

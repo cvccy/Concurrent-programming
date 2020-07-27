@@ -1,9 +1,14 @@
-package cn.hanff.edu.sample;
+package com.cvccy.sample;
 
+/**
+ * @Time 2020/07/27
+ * @author xhf
+ * @description 逃逸分析
+ */
 public class StackAllocTest {
 
     /**
-     * 进行两种测试
+     * 两种测试
      * 关闭逃逸分析，同时调大堆空间，避免堆内GC的发生，如果有GC信息将会被打印出来
      * VM运行参数：-Xmx4G -Xms4G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails -XX:+HeapDumpOnOutOfMemoryError
      *
@@ -32,16 +37,15 @@ public class StackAllocTest {
     }
 
 
-    private static Student alloc() {
+    private static TulingStudent alloc() {
         //Jit对编译时会对代码进行 逃逸分析
         //并不是所有对象存放在堆区，有的一部分存在线程栈空间
-        Student student = new Student();
+        TulingStudent student = new TulingStudent();
         return student;
     }
 
-    static class Student {
+    static class TulingStudent {
         private String name;
         private int age;
     }
 }
-
